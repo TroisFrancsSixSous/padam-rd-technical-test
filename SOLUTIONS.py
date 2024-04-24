@@ -124,7 +124,7 @@ def switch_vertices_solution(file):
     while improvement_possible == True and k > 0:
         improvement_possible = False
         for i in range(len(tour)): 
-            for j in range(i+1,len(tour)):
+            for j in range(i+2,len(tour)):
                 if try_switching(tour, tour[i], tour[j], edges):
                     improvement_possible = True
                     break
@@ -147,4 +147,5 @@ if switch_algo:
         print(switch_vertices_solution("instances/paris_map.txt")[1])
 
 #TODO implement k-means clustering methods for islands case before doing nearest neighbors
-#TODO allow to 
+#TODO think about methods to go back on already visited vertices
+#TODO debug the switching algorithm
